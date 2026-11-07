@@ -1,18 +1,13 @@
 {
-  "name": "skill-issue-society",
-  "version": "1.0.0",
+  "name": "flamigos-host-desk",
   "private": true,
-  "description": "Skill Issue Society: private board-game leaderboard and game-night app",
+  "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "test": "node test/logic.test.mjs"
+    "build": "python3 build.py",
+    "dev": "node tests/server.mjs",
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
-    "wrangler": "^4"
-  },
-  "dependencies": {
-    "htm": "^3.1.1",
-    "preact": "^11.0.2"
+    "wrangler": "^4.0.0"
   }
 }
