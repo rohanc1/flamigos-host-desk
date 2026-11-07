@@ -1,0 +1,47 @@
+/* Flamigos Host Desk: three themes. <html data-theme="bright|night|diwali">.
+   "Auto" in the picker resolves to bright or night from the device setting (see applyTheme in core.js). */
+:root,:root[data-theme="bright"]{
+  --bg:#FFF7F9; --bg-grad:linear-gradient(175deg,#FFFFFF 0%,#FEF3F6 42%,#FBE5EE 100%);
+  --surface:#FFFFFF; --surface2:#FDF1F5; --ink:#35222B; --muted:#7B6871; --line:#F2E0E7;
+  --brand:#C73865; --brand-ink:#FFFFFF; --brand-tint:#FCE6ED; --gold:#9A6B0E; --gold-tint:#FBEFD2;
+  --c-cards:#C73865; --c-trivia:#B26F12; --c-mafia:#6A59C0; --c-bonus:#2E9C8F;
+  --ok:#23794B; --danger:#B3261E; --focus:#2B6CB0;
+  --shadow:0 1px 2px rgba(150,50,90,.05),0 14px 34px rgba(200,80,120,.09);
+  --lights:none; color-scheme:light;
+}
+:root[data-theme="night"]{
+  --bg:#1A1116; --bg-grad:linear-gradient(175deg,#211620 0%,#1A1116 55%,#24151D 100%);
+  --surface:#251A21; --surface2:#2F2229; --ink:#F8ECF0; --muted:#BBA7B0; --line:#3E2D37;
+  --brand:#FF86A5; --brand-ink:#3A1020; --brand-tint:#4B2535; --gold:#E8B54B; --gold-tint:#3F3318;
+  --c-cards:#FF86A5; --c-trivia:#F0B94D; --c-mafia:#A99AF0; --c-bonus:#58C7B8;
+  --ok:#5FCB92; --danger:#FF8F86; --focus:#8DB8F0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 34px rgba(0,0,0,.3);
+  --lights:none; color-scheme:dark;
+}
+/* Diwali: warm cream, marigold and a deeper rose. Subtle on purpose: a thin string of lights and gold touches. */
+:root[data-theme="diwali"]{
+  --bg:#FFF9F0; --bg-grad:linear-gradient(175deg,#FFFDF8 0%,#FFF2DE 45%,#FBE3C6 100%);
+  --surface:#FFFFFF; --surface2:#FFF4E4; --ink:#3A2218; --muted:#7C6455; --line:#F1DFC6;
+  --brand:#B5304F; --brand-ink:#FFFFFF; --brand-tint:#FCE5D9; --gold:#9A6407; --gold-tint:#FDEBC2;
+  --c-cards:#B5304F; --c-trivia:#B86A06; --c-mafia:#7A4FB5; --c-bonus:#2B8A6C;
+  --ok:#23794B; --danger:#B3261E; --focus:#2B6CB0;
+  --shadow:0 1px 2px rgba(150,80,30,.06),0 14px 34px rgba(210,120,40,.12);
+  --lights:block; color-scheme:light;
+}
+body::before{content:"";display:var(--lights);position:fixed;left:0;right:0;top:0;height:12px;z-index:5;pointer-events:none;
+  background:
+    radial-gradient(circle at 7px 5px,#F6B73C 0 2.6px,rgba(246,183,60,.35) 3px 5px,transparent 6px) 0 0/26px 12px repeat-x,
+    radial-gradient(circle at 20px 5px,#F0803C 0 2.2px,rgba(240,128,60,.3) 2.6px 4.5px,transparent 5.5px) 0 0/26px 12px repeat-x;
+  opacity:.8;animation:twinkle 3.2s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.55}to{opacity:.9}}
+:root[data-theme="diwali"] .mark{background:linear-gradient(135deg,var(--brand),#D9822B)}
+:root[data-theme="diwali"] .phero{border-color:#F1DFC6}
+:root[data-theme="diwali"] .podium .p1 .blk{background:linear-gradient(180deg,#FDEBC2,#F9D88C)}
+@media (prefers-reduced-motion:reduce){body::before{animation:none}}
+.swatches{display:grid;gap:10px}
+.swopt{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;min-height:64px;padding:10px 14px;border:1.5px solid var(--line);border-radius:18px;background:var(--surface);text-align:left;width:100%}
+.swopt.on{border-color:var(--brand);background:var(--brand-tint)}
+.swopt b{display:block;font-family:var(--head)}
+.swopt small{color:var(--muted)}
+.swchips{display:flex;gap:4px}
+.swchips i{width:18px;height:34px;border-radius:9px;display:block;border:1px solid rgba(0,0,0,.08)}

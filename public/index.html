@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Flamigos Host Desk</title>
+<meta name="description" content="Live scoreboard and host desk for Flamigos Games Meetup.">
+<meta name="theme-color" content="#FFF7F9">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<script>
+/* set the saved look before first paint so the page never flashes the wrong theme */
+(function(){try{var p=localStorage.getItem('flamigos-theme')||'auto',t=p;if(p==='auto')t=matchMedia('(prefers-color-scheme: dark)').matches?'night':'bright';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','bright')}})();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app"><noscript>This page needs JavaScript.</noscript></div>
+<div id="fx" aria-hidden="true"></div>
+<div id="toasts" role="status" aria-live="polite"></div>
+<div id="sheet-root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

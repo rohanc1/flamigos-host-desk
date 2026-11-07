@@ -1,0 +1,32 @@
+
+/* ===== v3: awards, sync chip, header tools, 5-way phase tabs ===== */
+.seg{grid-template-columns:repeat(5,minmax(0,1fr))}
+.seg button{padding:4px 1px}
+.seg button span{font-size:13px}
+.seg button small{font-size:10.5px}
+.tools{margin-left:auto;display:flex;gap:8px;align-items:center}
+.whochip{margin-left:0}
+.sync{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--surface2);color:var(--muted);white-space:nowrap}
+.sync::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.sync.ok{color:var(--ok)}
+.sync.saving{color:var(--gold)}
+.sync.off{color:var(--danger)}
+.live .acts{align-items:center}
+.bdg.aw{background:var(--gold);color:var(--surface)}
+.bdg.aw svg.i{stroke-width:2.4}
+.awgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.awcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:10px;align-content:start;box-shadow:var(--shadow);min-width:0}
+.awcard.off{opacity:.6}
+.awk{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.awt{font-family:var(--head);font-size:21px;font-weight:800;line-height:1.1;text-wrap:balance}
+.awcard.big{padding:20px;text-align:center;justify-items:center;background:linear-gradient(180deg,var(--surface),var(--gold-tint));border-color:color-mix(in srgb,var(--gold) 35%,var(--line))}
+.awcard.big.won{border-color:var(--gold)}
+.awcard.big .awt{font-size:1.5em}
+.awwin{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.awp{display:grid;justify-items:center;gap:6px}
+.awp b{font-family:var(--head);font-size:1.1em}
+.awnote{font-family:var(--hand);font-size:1.45em;color:var(--brand);line-height:1.1}
+.awlock{display:grid;justify-items:center;gap:4px;color:var(--muted);padding:12px 0;font-size:.95em}
+.awlock svg{width:30px;height:30px}
+@container (min-width:1100px){.awgrid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}}
+@media (max-width:859px){.tools{order:2}.tools .whochip small{display:none}}
